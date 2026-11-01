@@ -1,0 +1,34 @@
+{
+  "schema": "phalm.b223.assets.v1",
+  "parameter_count": 182708,
+  "reference": {
+    "model_id": "Continuous Planner",
+    "motor_config": {
+      "enc": "gru",
+      "decoder": "prodmp",
+      "forecast": 128,
+      "commit": 32,
+      "history": 640,
+      "head_hold": 1,
+      "memory": false,
+      "dynamics": true,
+      "velocity_scale": 1.1982087601807259,
+      "position_scale": 81.73350722609987,
+      "target_secant_ms": 32
+    },
+    "active_dependencies": {
+      "brake_and_hazards": {
+        "sha256": "4c71cc4d29b4a13e613afa88438f772c478fd542c1c9095d23447ecb3c4a3afa"
+      }
+    }
+  },
+  "files": {
+    "brake.onnx": "ec511415341b72284498ae0333cb12da6bf26e1f9c06562bc468766bfa636c24",
+    "choice.onnx": "805f517a27219bc20fd0418be02cbf5316a601f040533056fe61304ef5e2ac74",
+    "choice_split.onnx": "7a8d36ab01e719423854051a6b1a4f35536e5688e2eaf3e9e154f32e5e174bf1",
+    "events.onnx": "cd839db370bf0804550cc42e63667736ddd2c2f8fa05cd46453c7254c28dabe3",
+    "hazard.onnx": "ebd385e53ca15bb5ec5609018bdd93f2213875a41b3c78912986b00dfda12e53",
+    "motor.onnx": "116126ef8a6dc7aae027de596158d51e44a06fa30dcfd7058dfcde463106542c",
+    "weights.npz": "018a096c66213c62b429caf4a8ae6f0470f6e283248a24f476f0fed3e36ea881"
+  }
+}

@@ -1,0 +1,4 @@
+# Python 3.11+; the default runtime needs no Torch, GPU or ONNX Runtime.
+numpy>=1.26
+scipy>=1.14
+numba>=0.61

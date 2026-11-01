@@ -1,0 +1,7 @@
+{
+  "schema": "abcurves.release_models.v2",
+  "release": "2.0.0",
+  "continuous_manifest": "continuous/manifest.json",
+  "model": "Continuous Planner",
+  "renderer": "renderer_global_h80.bin"
+}

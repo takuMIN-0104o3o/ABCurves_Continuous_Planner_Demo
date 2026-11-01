@@ -1,0 +1,248 @@
+{
+  "schema": "abcurves.shareable_demo.v1",
+  "upstream_repository": "https://github.com/optima-manent/ABCurves",
+  "upstream_commit": "e197441f8d343d3b4a4069c7cae20764d0953d15",
+  "upstream_release": "2.0.0",
+  "planner": "Continuous Planner",
+  "unchanged_public_files": {
+    "abcurves/continuous.py": "e816e450a1efa4b3e9064b03a81a751031d3dbcf0adca66dfe1299d15c4d5cb8",
+    "abcurves/continuous_pipeline.py": "31cbe3b29eb2c66324031389071e255d65ff0fc21a7f8c32750b5816f36c0844",
+    "abcurves/portable_renderer.py": "904f87d40d8edf6e99c2d8b7a9e4a17161c4d1ec44e83cb9aca0098b73de0fe7",
+    "abcurves/_continuous/backend.py": "b8c086a1dab59287f50515caa6544e88d3e6f137c85f0acd262977394aa0d4a8",
+    "abcurves/_continuous/kernels.py": "7209c7ba60cbc90a834fe330a62a16bb17f55f3becf2028991f7cb1d6f6f64eb",
+    "abcurves/_continuous/native.py": "7699f186dffa32a1f30f237ea79df744d2d1b190cf50aa5d098b539d65efed96",
+    "abcurves/_continuous/neural_native.py": "07c0773ca8638b859c1e1c38b99a779e4a09f028c5212ee654b79e777a17fca3",
+    "abcurves/_continuous/planner.py": "73ec83b47b125c3a3d977c26caadd8b81c9fd908a419c51429cb6e5aec0ec109",
+    "abcurves/_continuous/rng.py": "f76e43abd6fe95801572f9ea0f1e9620c14c398db488d186e4c72a3f14bf8923",
+    "abcurves/_continuous/runtime.py": "fdafd48556f4dba0488f9f8b7156fcc2f11622dd9fbc069e30d96d7db40ec2df",
+    "abcurves/_continuous/__init__.py": "046cd2fecea390486c0d8aac3abc4f0b69b1b36152f807fc73c5d73a1d84ad23",
+    "abcurves/_native/__init__.py": "607b6573d3dba43711f1068dba3e618cb3821c25c83f9e733a85d75d33a8081c",
+    "abcurves/_native/abcurves_renderer.dll": "2f3b9c360def7817fd621658845831c96559f64da47b044d4ad5a0319bdc3719",
+    "models/continuous/brake.onnx": "ec511415341b72284498ae0333cb12da6bf26e1f9c06562bc468766bfa636c24",
+    "models/continuous/choice.onnx": "805f517a27219bc20fd0418be02cbf5316a601f040533056fe61304ef5e2ac74",
+    "models/continuous/choice_split.onnx": "7a8d36ab01e719423854051a6b1a4f35536e5688e2eaf3e9e154f32e5e174bf1",
+    "models/continuous/events.onnx": "cd839db370bf0804550cc42e63667736ddd2c2f8fa05cd46453c7254c28dabe3",
+    "models/continuous/hazard.onnx": "ebd385e53ca15bb5ec5609018bdd93f2213875a41b3c78912986b00dfda12e53",
+    "models/continuous/motor.onnx": "116126ef8a6dc7aae027de596158d51e44a06fa30dcfd7058dfcde463106542c",
+    "models/continuous/weights.npz": "018a096c66213c62b429caf4a8ae6f0470f6e283248a24f476f0fed3e36ea881",
+    "models/renderer_global_h80.bin": "405c34bceb55485dfd6bd3c0368bce079feea680a64c6b261904ef5b4713e240",
+    "runtime/c/src/abc_fixed.c": "b6a213d0908f7893f5a5a11bd0db3df1a135dcb43fdeeaa0291a6de32013347b",
+    "runtime/c/src/abc_fixed_internal.h": "ace03785af29aaa3cf43f716e1f5a5105e460b2bd20e60bb8172c6c7978417e4",
+    "runtime/c/src/abc_online.c": "359e187d02295c2e6b30aa3e003626d4167d0686c37946fa4e07ea35039ed2ec",
+    "runtime/c/src/abc_w5_stream.c": "e7ebde9d387f814a0dc54737f6920b0414bad4342e6a85fd904f6a51f21112f3",
+    "runtime/c/src/abc_fixed_parts/abc_fixed_000.inc": "17d373dd3ac5b95443a7242c78d96c3a70d078486c62d02f119277200767d34f",
+    "runtime/c/src/abc_fixed_parts/abc_fixed_001.inc": "a294ca3482cf6d0abbf8ad14a1a7c3c380864f3e0f5bdcc52c2360b4faad6934",
+    "runtime/c/src/abc_fixed_parts/abc_fixed_002.inc": "19501cc74bbff68c3d752205b95df47a1a4a91a82c4d0fc5337b03038b03c0c1",
+    "runtime/c/src/abc_fixed_parts/abc_fixed_003.inc": "80ace17df0628eb511a5eec98098ec932dff54fd9ffc07cc286dc72f852dfb28",
+    "runtime/c/src/abc_fixed_parts/abc_fixed_004.inc": "6a83e48b1ffe9f9a8c3835b12016912d76bd2f2dcecfc138f0ef5aacf524a5b0",
+    "runtime/c/src/abc_fixed_parts/abc_fixed_005.inc": "210ea86b5273c8f886b85cd626f2190dd3a6212f701c1cb45865e21c0214f89c",
+    "runtime/c/src/abc_fixed_parts/abc_fixed_006.inc": "721e7ce9809dc292524e4d62aaae42197eab9ab3784cac6211987bc548649b56",
+    "runtime/c/include/abc_fixed.h": "e1c60e8d75ac769a63be31aabc9aac67c308e8e8a70e544688a19fd9eaede993",
+    "runtime/c/include/abc_online.h": "36aad00397b67b486fce43e1705534ddf9267af00f1746185def3506318a0e5d",
+    "runtime/c/include/abc_w5_stream.h": "18ef264383d79481f9b81ba949e8988f083c59c220c5fcb11c32bad3dda2e000",
+    "LICENSE": "72f517523eb57a5f35f10a65ae684dbd54377d1e2bec4bd13fcd7a4968602416"
+  },
+  "files": {
+    "LICENSE": {
+      "bytes": 1070,
+      "sha256": "72f517523eb57a5f35f10a65ae684dbd54377d1e2bec4bd13fcd7a4968602416"
+    },
+    "README.md": {
+      "bytes": 9081,
+      "sha256": "e7cf4f08f858697ce7513b8b96d54de1ed7869351bf16514002ca2d5104441dd"
+    },
+    "abcurves/__init__.py": {
+      "bytes": 711,
+      "sha256": "77afc859b56d2b42a2ccd4a1187bb3cab76af0769d90eb177ed45087d1577a9a"
+    },
+    "abcurves/_continuous/__init__.py": {
+      "bytes": 865,
+      "sha256": "046cd2fecea390486c0d8aac3abc4f0b69b1b36152f807fc73c5d73a1d84ad23"
+    },
+    "abcurves/_continuous/backend.py": {
+      "bytes": 6178,
+      "sha256": "b8c086a1dab59287f50515caa6544e88d3e6f137c85f0acd262977394aa0d4a8"
+    },
+    "abcurves/_continuous/kernels.py": {
+      "bytes": 10690,
+      "sha256": "7209c7ba60cbc90a834fe330a62a16bb17f55f3becf2028991f7cb1d6f6f64eb"
+    },
+    "abcurves/_continuous/native.py": {
+      "bytes": 10727,
+      "sha256": "7699f186dffa32a1f30f237ea79df744d2d1b190cf50aa5d098b539d65efed96"
+    },
+    "abcurves/_continuous/neural_native.py": {
+      "bytes": 18138,
+      "sha256": "07c0773ca8638b859c1e1c38b99a779e4a09f028c5212ee654b79e777a17fca3"
+    },
+    "abcurves/_continuous/planner.py": {
+      "bytes": 12072,
+      "sha256": "73ec83b47b125c3a3d977c26caadd8b81c9fd908a419c51429cb6e5aec0ec109"
+    },
+    "abcurves/_continuous/rng.py": {
+      "bytes": 5798,
+      "sha256": "f76e43abd6fe95801572f9ea0f1e9620c14c398db488d186e4c72a3f14bf8923"
+    },
+    "abcurves/_continuous/runtime.py": {
+      "bytes": 14504,
+      "sha256": "fdafd48556f4dba0488f9f8b7156fcc2f11622dd9fbc069e30d96d7db40ec2df"
+    },
+    "abcurves/_native/__init__.py": {
+      "bytes": 41,
+      "sha256": "607b6573d3dba43711f1068dba3e618cb3821c25c83f9e733a85d75d33a8081c"
+    },
+    "abcurves/_native/abcurves_renderer.dll": {
+      "bytes": 37888,
+      "sha256": "2f3b9c360def7817fd621658845831c96559f64da47b044d4ad5a0319bdc3719"
+    },
+    "abcurves/continuous.py": {
+      "bytes": 3769,
+      "sha256": "e816e450a1efa4b3e9064b03a81a751031d3dbcf0adca66dfe1299d15c4d5cb8"
+    },
+    "abcurves/continuous_pipeline.py": {
+      "bytes": 7063,
+      "sha256": "31cbe3b29eb2c66324031389071e255d65ff0fc21a7f8c32750b5816f36c0844"
+    },
+    "abcurves/model_store.py": {
+      "bytes": 181,
+      "sha256": "ba749d4acafefb092012d5fe334dc033c922d9f1b701a2b7f32982764f04ef12"
+    },
+    "abcurves/portable_renderer.py": {
+      "bytes": 16598,
+      "sha256": "904f87d40d8edf6e99c2d8b7a9e4a17161c4d1ec44e83cb9aca0098b73de0fe7"
+    },
+    "check_install.py": {
+      "bytes": 1483,
+      "sha256": "1766dc5fedd2f23dca65fb648f205c614dc54e2009391934d6a2d59c732bc1a3"
+    },
+    "demo.py": {
+      "bytes": 15295,
+      "sha256": "f02d4071e4ad882790117d594eae71ded0d23bd72936fd1ef5721c04f924f6fd"
+    },
+    "example_receipts.json": {
+      "bytes": 265,
+      "sha256": "bd38e30faa217a3c8e06fa7233a31e33ea23466a2fcb20bdbb5181816e98139f"
+    },
+    "example_targets.py": {
+      "bytes": 3296,
+      "sha256": "a6a977e130d9aff2ace3b98b66854b10bd1fbdf546c934cf6a7be9dfbcde8fef"
+    },
+    "models/continuous/brake.onnx": {
+      "bytes": 127338,
+      "sha256": "ec511415341b72284498ae0333cb12da6bf26e1f9c06562bc468766bfa636c24"
+    },
+    "models/continuous/choice.onnx": {
+      "bytes": 44933,
+      "sha256": "805f517a27219bc20fd0418be02cbf5316a601f040533056fe61304ef5e2ac74"
+    },
+    "models/continuous/choice_split.onnx": {
+      "bytes": 43193,
+      "sha256": "7a8d36ab01e719423854051a6b1a4f35536e5688e2eaf3e9e154f32e5e174bf1"
+    },
+    "models/continuous/events.onnx": {
+      "bytes": 145497,
+      "sha256": "cd839db370bf0804550cc42e63667736ddd2c2f8fa05cd46453c7254c28dabe3"
+    },
+    "models/continuous/hazard.onnx": {
+      "bytes": 17844,
+      "sha256": "ebd385e53ca15bb5ec5609018bdd93f2213875a41b3c78912986b00dfda12e53"
+    },
+    "models/continuous/manifest.json": {
+      "bytes": 1241,
+      "sha256": "8cb261f69f77f58c59e746826593da1b8bcf9f1c8049c7ce27c0436566eb26d6"
+    },
+    "models/continuous/motor.onnx": {
+      "bytes": 552418,
+      "sha256": "116126ef8a6dc7aae027de596158d51e44a06fa30dcfd7058dfcde463106542c"
+    },
+    "models/continuous/weights.npz": {
+      "bytes": 838096,
+      "sha256": "018a096c66213c62b429caf4a8ae6f0470f6e283248a24f476f0fed3e36ea881"
+    },
+    "models/manifest.json": {
+      "bytes": 194,
+      "sha256": "d5e8b98c972c5b360c60da94534d014f1c9717f80f181938b25b4fb7dfe817c2"
+    },
+    "models/renderer_global_h80.bin": {
+      "bytes": 44484,
+      "sha256": "405c34bceb55485dfd6bd3c0368bce079feea680a64c6b261904ef5b4713e240"
+    },
+    "requirements.txt": {
+      "bytes": 109,
+      "sha256": "b55ef61e12fd5676faae1984892e9bd579e652859fe3c82cd635bdb4aeba3da7"
+    },
+    "runtime/c/CMakeLists.txt": {
+      "bytes": 732,
+      "sha256": "e3067495bfc3a0527b8df2c25cccaa75cd3970e67468ffc8f01eb54c297eebd5"
+    },
+    "runtime/c/include/abc_fixed.h": {
+      "bytes": 3857,
+      "sha256": "e1c60e8d75ac769a63be31aabc9aac67c308e8e8a70e544688a19fd9eaede993"
+    },
+    "runtime/c/include/abc_online.h": {
+      "bytes": 4114,
+      "sha256": "36aad00397b67b486fce43e1705534ddf9267af00f1746185def3506318a0e5d"
+    },
+    "runtime/c/include/abc_w5_stream.h": {
+      "bytes": 1437,
+      "sha256": "18ef264383d79481f9b81ba949e8988f083c59c220c5fcb11c32bad3dda2e000"
+    },
+    "runtime/c/src/abc_fixed.c": {
+      "bytes": 347,
+      "sha256": "b6a213d0908f7893f5a5a11bd0db3df1a135dcb43fdeeaa0291a6de32013347b"
+    },
+    "runtime/c/src/abc_fixed_internal.h": {
+      "bytes": 1030,
+      "sha256": "ace03785af29aaa3cf43f716e1f5a5105e460b2bd20e60bb8172c6c7978417e4"
+    },
+    "runtime/c/src/abc_fixed_parts/abc_fixed_000.inc": {
+      "bytes": 8166,
+      "sha256": "17d373dd3ac5b95443a7242c78d96c3a70d078486c62d02f119277200767d34f"
+    },
+    "runtime/c/src/abc_fixed_parts/abc_fixed_001.inc": {
+      "bytes": 8568,
+      "sha256": "a294ca3482cf6d0abbf8ad14a1a7c3c380864f3e0f5bdcc52c2360b4faad6934"
+    },
+    "runtime/c/src/abc_fixed_parts/abc_fixed_002.inc": {
+      "bytes": 3732,
+      "sha256": "19501cc74bbff68c3d752205b95df47a1a4a91a82c4d0fc5337b03038b03c0c1"
+    },
+    "runtime/c/src/abc_fixed_parts/abc_fixed_003.inc": {
+      "bytes": 8829,
+      "sha256": "80ace17df0628eb511a5eec98098ec932dff54fd9ffc07cc286dc72f852dfb28"
+    },
+    "runtime/c/src/abc_fixed_parts/abc_fixed_004.inc": {
+      "bytes": 7292,
+      "sha256": "6a83e48b1ffe9f9a8c3835b12016912d76bd2f2dcecfc138f0ef5aacf524a5b0"
+    },
+    "runtime/c/src/abc_fixed_parts/abc_fixed_005.inc": {
+      "bytes": 8429,
+      "sha256": "210ea86b5273c8f886b85cd626f2190dd3a6212f701c1cb45865e21c0214f89c"
+    },
+    "runtime/c/src/abc_fixed_parts/abc_fixed_006.inc": {
+      "bytes": 5015,
+      "sha256": "721e7ce9809dc292524e4d62aaae42197eab9ab3784cac6211987bc548649b56"
+    },
+    "runtime/c/src/abc_online.c": {
+      "bytes": 21225,
+      "sha256": "359e187d02295c2e6b30aa3e003626d4167d0686c37946fa4e07ea35039ed2ec"
+    },
+    "runtime/c/src/abc_w5_stream.c": {
+      "bytes": 5531,
+      "sha256": "e7ebde9d387f814a0dc54737f6920b0414bad4342e6a85fd904f6a51f21112f3"
+    },
+    "static/app.js": {
+      "bytes": 20188,
+      "sha256": "8cb30d4306d85f88d45b7b27d2e507972d6e1afe2122373eab82b71277b8b941"
+    },
+    "static/index.html": {
+      "bytes": 6681,
+      "sha256": "f77d60a3f9d55fb4c56193e7f822ab62b3b91f344f8c99e715499642bc4af9f4"
+    },
+    "static/style.css": {
+      "bytes": 9569,
+      "sha256": "c941f96dbc25e42d3f97481d99424af411b878b20234c464aeb118eb6f30710e"
+    }
+  },
+  "privacy": "Explicit file allowlist; machine paths and private identifiers scanned, including inside NPZ arrays. No data recordings, saved drawings, logs or research candidates included."
+}

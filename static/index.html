@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ABCurves · Continuous Planner</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+<main>
+  <header><div><span class="eyebrow">ABCurves · CONTINUOUS PLANNER</span><h1>Draw a target. Watch the planner follow.</h1></div><span id="connection" class="badge">Connecting…</span></header>
+  <section class="card">
+    <div class="section-bar"><h2>Target path</h2><div class="buttons"><label for="preset" class="sr-only">Example path</label><select id="preset"><option value="eight">Figure eight</option><option value="circle">Circle</option><option value="corners">Corners</option><option value="static">Static target</option></select><button id="use-preset">Use example</button><button id="clear">Clear / draw</button><button id="import">Import targets</button><button id="export-path">Export targets</button><input type="file" id="target-file" accept=".json,application/json" hidden></div></div>
+    <canvas id="drawing" width="900" height="360" aria-label="Draw a timed target path by dragging" title="Drag to draw a timed path. + marks the planner's initial position."></canvas>
+    <div class="under-canvas"><span id="path-info">Drag to draw.</span></div>
+    <div class="controls">
+      <div class="control path-only"><label for="update">Target updates <output id="update-value">33 ms</output></label><input id="update" type="range" min="1" max="100" value="33"><div class="quick"><button data-cadence="1">1 ms</button><button data-cadence="16">16 ms</button><button data-cadence="33">33 ms</button></div></div>
+      <div class="control"><label for="chunk">Output call size <output id="chunk-value">1 ms</output></label><input id="chunk" type="range" min="1" max="100" value="1" title="Larger calls still return every 1 ms sample."></div>
+      <div class="control path-only"><label for="speed">Target speed <output id="speed-value">1×</output></label><input id="speed" type="range" min="0.25" max="3" step="0.25" value="1"></div>
+      <div class="control path-only"><label for="scale">Drawing scale <output id="scale-value">2 counts/px</output></label><input id="scale" type="range" min="0.5" max="8" step="0.5" value="2"></div>
+      <div class="control path-only"><label for="hold">Final hold <output id="hold-value">2 s</output></label><input id="hold" type="range" min="0" max="8000" step="250" value="2000"></div>
+      <div class="control"><label for="radius">Target radius <output id="radius-value">35 counts</output></label><input id="radius" type="range" min="1" max="150" value="35" title="Display and scoring only; this does not change planner movement."></div>
+      <div class="control compact"><label for="seed">Sample seed</label><input id="seed" type="number" min="0" max="2147480000" value="7" title="A new stochastic draw of the same planner."></div>
+      <div class="control compact"><div class="two-inputs"><label for="draws">Draws<select id="draws"><option>1</option><option>2</option><option>3</option><option selected>4</option></select></label><label for="cycles">Cycles<input id="cycles" class="path-input" type="number" min="1" max="5" value="1"></label></div></div>
+    </div>
+    <div class="run-bar"><label><input type="checkbox" id="changed" checked> Send only changed targets</label><button id="run" class="primary" disabled>Run planner</button></div>
+    <details><summary>Optional: integer reports with your own Renderer profile</summary><div class="renderer-settings"><p>Provide exactly 256 genuine integer [dx, dy] reports from your device. No profile is bundled.</p><button id="profile-button">Load profile JSON</button><input type="file" id="profile-file" accept=".json,application/json" hidden><span id="profile-status">No profile loaded</span><label><input type="checkbox" id="render" disabled> Enable Renderer</label><label>Radians per native count <input id="gain" type="number" step="any" min="0.0000001" max="0.1" value="0.0003509487083280618"></label><label><input id="y-down" type="checkbox" checked> Hardware Y points down</label></div></details>
+  </section>
+  <p id="status" role="status" aria-live="polite">Loading…</p>
+  <section id="results" class="card" hidden>
+    <div class="section-bar playback-heading"><h2 id="playback-title">Playback</h2><div class="buttons"><button id="export-result" disabled>Export JSON</button><button id="expand" hidden aria-label="Expand playback" aria-expanded="false" title="Expand playback">Expand <span aria-hidden="true">↗</span></button></div></div>
+    <div id="busy" class="busy" role="status" hidden><span class="spinner" aria-hidden="true"></span><strong>Generating movement…</strong></div>
+    <p id="playback-error" class="error-message" role="alert" hidden></p>
+    <div id="output" hidden>
+    <div class="player"><button id="play" class="primary">Play</button><button id="rewind" aria-label="Rewind playback" title="Rewind">↺</button><label class="sr-only" for="scrub">Playback time</label><input id="scrub" type="range" min="0" max="1000" value="0"><span id="clock">0.000 s</span><select id="play-speed" aria-label="Playback speed"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option></select></div>
+    <div class="viewer-toolbar">
+      <div class="view-toggle" role="group" aria-label="Camera view"><button id="overview" aria-pressed="true" title="Keep the camera still over the whole path.">Overview</button><button id="follow" aria-pressed="false" title="Keep the moving target at the center of every view.">Follow target</button></div>
+      <div class="zoom-tools" role="group" aria-label="Zoom all views"><button id="zoom-out" aria-label="Zoom out all views" title="Zoom out">−</button><button id="zoom-fit" aria-label="Reset zoom" title="Reset zoom">100%</button><button id="zoom-in" aria-label="Zoom in all views" title="Zoom in">+</button></div>
+      <div class="focus-tools"><select id="focus-draw" aria-label="Focused draw" hidden></select><button id="show-all" hidden>All draws</button></div>
+    </div>
+    <div id="viewer" class="viewer"><div id="target-view"></div><div id="draw-grid"></div></div>
+    <details class="run-details"><summary>Run details</summary><p id="run-info"></p><p>Positions use common counts, X right / Y up. Output samples are 1 ms apart. Target radius affects display and scoring only.</p></details>
+    </div>
+  </section>
+  <footer><a href="https://github.com/optima-manent/ABCurves" target="_blank" rel="noopener noreferrer">ABCurves</a></footer>
+</main>
+</body>
+</html>
